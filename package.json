@@ -1,5 +1,5 @@
 {
-  "name": "templater",
+  "name": "black-tags",
   "description": "HTML Parser with expression and light syntax",
   "version": "1.0.0",
   "author": {
@@ -8,11 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/eprincev-egor/templater.git"
+    "url": "https://github.com/eprincev-egor/black-tags.git"
   },
   "keywords": [
     "html",
 	"templater",
+	"black-tags",
     "parser"
   ]
 }
