@@ -1,7 +1,7 @@
 {
   "name": "black-tags",
   "description": "HTML Parser with expression and light syntax",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "author": {
     "name": "Eprincev Egor",
     "email": "eprincev.egor@ya.ru"
