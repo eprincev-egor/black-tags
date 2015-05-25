@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>QUnit Example</title>
+  <link rel="stylesheet" href="../qunit.css">
+</head>
+<body>
+
+<script class='template t' type='text/template'>
+	<div class='title'>{title}</div>
+	
+	<each table='items' as='model' info='info'>
+		<div class='item'>
+			<div class='name'>{info.index} : {model.name}</div>
+			<div class='desc'>{model.desc}</div>
+			<if value='isset(model.options)'>
+				<each table='model.options' as='option' info='option_info'>
+					<div class='option'>{option.name}</div>
+				</each>
+			</if>
+		</div>
+		<if value='info.index % 3 == 0'>
+			<div class='wow'>
+				lol
+			</div>
+		</if>
+	</each>
+</script>
+<script class='template u' type='text/template'>
+	<div class='title'><%= title %></div>
+	
+	<% for (var index = 0, n=items.length; index < n; index++) {
+		var info = {index:index};
+		var model = items[index];
+	%>
+		<div class='item'>
+			<div class='name'><%= info.index %> : <%= model.name %></div>
+			<div class='desc'><%= model.desc %></div>
+			<% if ( model.options ) { 
+				for (var j=0,m=model.options.length; j<m; j++) {
+					var option = model.options[j];
+			%>
+				<div class='option'><%= option.name %></div>
+			<% }} %>
+		</div>
+		<% if ( index % 3 == 0 ) { %>
+			<div class='wow'>
+				lol
+			</div>
+		<% } %>
+	<% } %>
+</script>
+
+<script class='template t' type='text/template'>
+{title}
+</script>
+<script class='template u' type='text/template'>
+<%= title %>
+</script>
+
+<script class='template t' type='text/template'>
+	1x<each table='items'>
+		2x<if value='item.options'>
+		3x{item.name}x3
+		</if>x2
+	</each>x1
+</script>
+<script class='template u' type='text/template'>
+	1x<% for (var i=0, n=items.length; i<n; i++) { %>
+		2x<% if (items[i].options) { %>
+		3x<%= items[i].name %>x3
+		<% } %>x2
+	<% } %>x1
+</script>
+
+
+<script class='template t' type='text/template'>
+1<each table='items'>2
+3{info.index}4
+5</each>6
+</script>
+<script class='template u' type='text/template'>
+1<% for (var i=0, n=items.length; i<n; i++) { %>2
+3<%= i %>4
+5<% } %>6
+</script>
+
+
+<script class='template t' type='text/template'>
+1<each table='items'>2
+3{info.index}4
+	5<each table='items' as='model' info='i'>6
+		7{model.name}8{i.index}10
+	11</each>12
+	13{info.index}14{item.name}15
+16</each>17
+</script>
+<script class='template u' type='text/template'>
+1<% for (var i=0, n=items.length; i<n; i++) { %>2
+3<%= i %>4
+	5<% for (var j=0, m=items.length; j<m; j++) { %>6
+		7<%= items[j].name %>8<%= j %>10
+	11<% } %>12
+	13<%= i %>14<%= items[i].name %>15
+16<% } %>17
+</script>
+
+
+
+
+
+
+
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <script src="../qunit.js"></script>
+  <script>var app={};</script>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="../../lib/eval.js"></script>
+  <script src="../../lib/templater.js"></script>
+  <script src='../underscore.js'></script>
+  <script src="test.js"></script>
+</body>
+</html>
