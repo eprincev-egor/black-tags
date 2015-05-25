@@ -8,29 +8,29 @@ var parsedHTML = parser.parse(scopeObject);
 {  '"' + items[0].name + '"' }
 
 ## if expression
-<if value=" a == 1 ">
+&lt;if value=" a == 1 "&gt;
 	some html code...
-</if>
+&lt;/if&gt;
 
 
 ## forEach
-<each table='items' as='item' info='info'>
-	<li class='item-{info.index}'>{item.name}</li>
-</each>
+&lt;each table='items' as='item' info='info'&gt;
+	&lt;li class='item-{info.index}'&gt;{item.name}&lt;/li&gt;
+&lt;/each&gt;
 
 ## modules
 
-<inc:menu params="items, 1"/>
+&lt;inc:menu params="items, 1"/&gt;
 
-<module name='menu' params='list, level'>
-	<ul>
-		<each table='list' as='item'>
-			<li>
+&lt;module name='menu' params='list, level'&gt;
+	&lt;ul&gt;
+		&lt;each table='list' as='item'&gt;
+			&lt;li&gt;
 				{item.name}
-				<if value='isset(item.items)'>
-					<inc:menu params="item.items, level+1" />
-				</if>
-			</li>
-		</each>
-	</ul>
-</module>
+				&lt;if value='isset(item.items)'&gt;
+					&lt;inc:menu params="item.items, level+1" /&gt;
+				&lt;/if&gt;
+			&lt;/li&gt;
+		&lt;/each&gt;
+	&lt;/ul&gt;
+&lt;/module&gt;
