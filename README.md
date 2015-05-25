@@ -8,29 +8,29 @@ var parsedHTML = parser.parse(scopeObject);
 {  '"' + items[0].name + '"' }
 
 ## if expression
-&lt;if value=" a == 1 "&gt;
-	some html code...
-&lt;/if&gt;
+&lt;if value=" a == 1 "&gt;  <br/>
+	some html code...  <br/>
+&lt;/if&gt;  <br/>
 
 
 ## forEach
-&lt;each table='items' as='item' info='info'&gt;
-	&lt;li class='item-{info.index}'&gt;{item.name}&lt;/li&gt;
-&lt;/each&gt;
+&lt;each table='items' as='item' info='info'&gt;  <br/>
+	&lt;li class='item-{info.index}'&gt;{item.name}&lt;/li&gt;  <br/>
+&lt;/each&gt;  <br/>
 
 ## modules
 
-&lt;inc:menu params="items, 1"/&gt;
+&lt;inc:menu params="items, 1"/&gt;  <br/>
 
-&lt;module name='menu' params='list, level'&gt;
-	&lt;ul&gt;
-		&lt;each table='list' as='item'&gt;
-			&lt;li&gt;
-				{item.name}
-				&lt;if value='isset(item.items)'&gt;
-					&lt;inc:menu params="item.items, level+1" /&gt;
-				&lt;/if&gt;
-			&lt;/li&gt;
-		&lt;/each&gt;
-	&lt;/ul&gt;
-&lt;/module&gt;
+&lt;module name='menu' params='list, level'&gt;  <br/>
+	&lt;ul&gt;  <br/>
+		&lt;each table='list' as='item'&gt;  <br/>
+			&lt;li&gt;  <br/>
+				{item.name}  <br/>
+				&lt;if value='isset(item.items)'&gt;  <br/>
+					&lt;inc:menu params="item.items, level+1" /&gt;  <br/>
+				&lt;/if&gt;  <br/>
+			&lt;/li&gt;  <br/>
+		&lt;/each&gt;  <br/>
+	&lt;/ul&gt;  <br/>
+&lt;/module&gt;  <br/>
