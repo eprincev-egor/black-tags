@@ -8,12 +8,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/eprincev-egor/black-tags.git"
+    "url": "git+https://github.com/eprincev-egor/black-tags.git"
   },
   "keywords": [
     "html",
-	"templater",
-	"black-tags",
+    "templater",
+    "black-tags",
     "parser"
-  ]
+  ],
+  "readme": "# Black-Tags template parser\r\n\r\n## create object\r\nvar parser = new app.Templater({template: \"some template...\"});\r\nvar parsedHTML = parser.parse(scopeObject);\r\n\r\n## expression\r\n{  '\"' + items[0].name + '\"' }\r\n\r\n## if expression\r\n&lt;if value=\" a == 1 \"&gt;  <br/>\r\n\tsome html code...  <br/>\r\n&lt;/if&gt;  <br/>\r\n\r\n\r\n## forEach\r\n&lt;each table='items' as='item' info='info'&gt;  <br/>\r\n\t&lt;li class='item-{info.index}'&gt;{item.name}&lt;/li&gt;  <br/>\r\n&lt;/each&gt;  <br/>\r\n\r\n## modules\r\n\r\n&lt;inc:menu params=\"items, 1\"/&gt;  <br/>\r\n\r\n&lt;module name='menu' params='list, level'&gt;  <br/>\r\n\t&lt;ul&gt;  <br/>\r\n\t\t&lt;each table='list' as='item'&gt;  <br/>\r\n\t\t\t&lt;li&gt;  <br/>\r\n\t\t\t\t{item.name}  <br/>\r\n\t\t\t\t&lt;if value='isset(item.items)'&gt;  <br/>\r\n\t\t\t\t\t&lt;inc:menu params=\"item.items, level+1\" /&gt;  <br/>\r\n\t\t\t\t&lt;/if&gt;  <br/>\r\n\t\t\t&lt;/li&gt;  <br/>\r\n\t\t&lt;/each&gt;  <br/>\r\n\t&lt;/ul&gt;  <br/>\r\n&lt;/module&gt;  <br/>",
+  "readmeFilename": "README.md",
+  "gitHead": "82dd18f658bcc8c30fcd5babb5eea414a5d9a973",
+  "bugs": {
+    "url": "https://github.com/eprincev-egor/black-tags/issues"
+  },
+  "homepage": "https://github.com/eprincev-egor/black-tags#readme",
+  "_id": "black-tags@1.0.3",
+  "scripts": {},
+  "_shasum": "0e4ccca1a4e49e19ddd7300ee0f9e163a9dda51b",
+  "_from": "black-tags@*"
 }
