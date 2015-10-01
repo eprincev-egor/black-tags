@@ -19,7 +19,7 @@ var parsedHTML = parser.parse(scopeObject);
 &lt;/each&gt;  <br/>
 
 ## modules
-``javascript
+`html
 <inc:menu params="items, 1"/>  <br/>
 
 <module name='menu' params='list, level'>  <br/>
@@ -34,4 +34,4 @@ var parsedHTML = parser.parse(scopeObject);
 		</each>  <br/>
 	</ul>  <br/>
 </module>  <br/>
-``
+`
