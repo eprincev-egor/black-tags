@@ -19,18 +19,19 @@ var parsedHTML = parser.parse(scopeObject);
 &lt;/each&gt;  <br/>
 
 ## modules
+``javascript
+<inc:menu params="items, 1"/>  <br/>
 
-&lt;inc:menu params="items, 1"/&gt;  <br/>
-
-&lt;module name='menu' params='list, level'&gt;  <br/>
-	&lt;ul&gt;  <br/>
-		&lt;each table='list' as='item'&gt;  <br/>
-			&lt;li&gt;  <br/>
+<module name='menu' params='list, level'>  <br/>
+	<ul>  <br/>
+		&<each table='list' as='item'>  <br/>
+			<li>  <br/>
 				{item.name}  <br/>
-				&lt;if value='isset(item.items)'&gt;  <br/>
-					&lt;inc:menu params="item.items, level+1" /&gt;  <br/>
-				&lt;/if&gt;  <br/>
-			&lt;/li&gt;  <br/>
-		&lt;/each&gt;  <br/>
-	&lt;/ul&gt;  <br/>
-&lt;/module&gt;  <br/>
+				<if value='isset(item.items)'>  <br/>
+					<inc:menu params="item.items, level+1" />  <br/>
+				</if>  <br/>
+			</li>  <br/>
+		</each>  <br/>
+	</ul>  <br/>
+</module>  <br/>
+``
